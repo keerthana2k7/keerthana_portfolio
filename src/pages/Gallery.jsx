@@ -12,7 +12,7 @@ const IMAGES = {
     },
     {
       id: 2,
-      caption: "Collaborating with peers at Open Source Lab and Tamil Nadu Java User Group (TNJUG) meetups ☕.",
+      caption: "Campus innovation, engineering hackathons, and collaborative problem-solving journey at Kongu Engineering College.",
       photos: ["/gallery/greenlab.jpg"],
     },
   ],
@@ -42,11 +42,35 @@ const IMAGES = {
     {
       id: 2,
       caption: "🇮🇳 Smart India Hackathon (SIH 2025) Pre-Finalist — Selected among 1,000+ national teams across India!",
-      photos: ["/gallery/greenlab.jpg"],
+      photos: ["/gallery/presentation_sih.jpg"],
     },
     {
       id: 3,
       caption: "✨ Best Contributor Award by Tamil Nadu Java User Group (TNJUG) in collaboration with Kongu Engineering College.",
+      photos: ["/gallery/meetup_tnjug.jpg"],
+    },
+  ],
+  presentations: [
+    {
+      id: 1,
+      caption: "🎤 Smart India Hackathon (SIH 2025) National Pre-Finals Presentation: Presenting and defending our team's real-time architecture, microservices data pipeline, and system workflows to expert jury panels.",
+      photos: ["/gallery/presentation_sih.jpg"],
+    },
+    {
+      id: 2,
+      caption: "📊 Smart Urban & Infrastructure Systems Presentation: Technical presentation showcasing end-to-end data flow, cloud server integration, IoT gateways, and modern web interfaces.",
+      photos: ["/gallery/presentation_defense.jpg"],
+    },
+  ],
+  meetups: [
+    {
+      id: 1,
+      caption: "🤝 Tamil Nadu Java User Group (TNJUG) Tech Meetup: Engaging with industry engineers, developers, and open-source practitioners discussing Java modern standards, backend patterns, and open-source collaboration.",
+      photos: ["/gallery/meetup_tnjug.jpg"],
+    },
+    {
+      id: 2,
+      caption: "🌱 Green Lab Sustainability & Innovation Meetup: Brainstorming energy efficiency, sustainable computing, and IoT monitoring solutions with peers at Kongu Engineering College.",
       photos: ["/gallery/greenlab.jpg"],
     },
   ],
@@ -83,6 +107,14 @@ const tabContentVariants = {
   },
   exit: { opacity: 0, y: -30, scale: 0.98, transition: { duration: 0.4 } },
 };
+
+const TABS = [
+  { key: "personal", label: "Personal" },
+  { key: "projects", label: "Projects" },
+  { key: "achievements", label: "Achievements" },
+  { key: "presentations", label: "Presentations" },
+  { key: "meetups", label: "Meetups" },
+];
 
 export default function Gallery() {
   const [tab, setTab] = useState("personal");
@@ -121,15 +153,15 @@ export default function Gallery() {
 
       {/* 🧭 Tabs */}
       <motion.div className="tab-buttons" variants={childVariants}>
-        {["personal", "projects", "achievements"].map((type) => (
+        {TABS.map(({ key, label }) => (
           <motion.button
-            key={type}
-            className={`tab ${tab === type ? "active" : ""}`}
-            onClick={() => setTab(type)}
+            key={key}
+            className={`tab ${tab === key ? "active" : ""}`}
+            onClick={() => setTab(key)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {type.charAt(0).toUpperCase() + type.slice(1)}
+            {label}
           </motion.button>
         ))}
       </motion.div>
