@@ -22,9 +22,9 @@ const SKILLS = [
 const ROWS = [
   [
     { title: "Languages", items: ["Java (Core & Advanced)", "C++", "C", "Python", "JavaScript", "SQL"] },
-    { title: "Backend & Databases", items: ["REST APIs", "JDBC", "Spring Boot", "MySQL", "Relational Database Design", "DBeaver"] },
+    { title: "Backend & Databases", items: ["REST APIs", "FastAPI", "Spring Boot", "JDBC", "MySQL", "Relational Database Design", "DBeaver"] },
     { title: "Frontend & UI", items: ["React.js", "TypeScript", "HTML5", "CSS3", "Bootstrap", "Responsive UI"] },
-    { title: "Core CS & Tools", items: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Git & GitHub", "Docker Basics", "VS Code"] },
+    { title: "AI/ML & Core CS", items: ["Machine Learning (Scikit-Learn)", "Predictive Modeling", "Data Structures & Algorithms (DSA)", "OOP", "Git & GitHub", "Docker Basics"] },
   ],
   [
     {

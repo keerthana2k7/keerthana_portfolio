@@ -1,8 +1,103 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, GitPullRequest, Code2, Users, Trophy, Briefcase, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Award, GitPullRequest, Code2, Users, Trophy, Briefcase, ExternalLink, CheckCircle2, Cpu, Brain, Sparkles } from "lucide-react";
 
 const ACHIEVEMENTS = {
+  certifications: [
+    {
+      id: "hcl-aiml-cert",
+      title: "HCL AI/ML Certification",
+      org: "HCLTech / HCL Training Program",
+      date: "2026",
+      category: "Professional Certification",
+      badge: "AI/ML Certified",
+      icon: Cpu,
+      accent: "#6366f1",
+      desc: "Professional Certification in Artificial Intelligence & Machine Learning awarded by HCL. Mastered machine learning pipelines, predictive modeling, data preprocessing, and model serving with FastAPI and interactive web interfaces.",
+      skills: ["Artificial Intelligence", "Machine Learning", "Python", "FastAPI", "Predictive Modeling", "Scikit-Learn"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+    {
+      id: "zoho-cert",
+      title: "Software Development Internship Certificate",
+      org: "Zoho Corporation Private Limited",
+      date: "Dec 2025 – May 2026",
+      category: "Industry Certificate",
+      badge: "Corporate Certified",
+      icon: Briefcase,
+      accent: "#0ea5e9",
+      desc: "Earned official Certificate of Completion for 6-month Java backend engineering internship with a 'Good' performance rating within Zoho Corporation's Technical Staff team.",
+      skills: ["Java Backend", "OOP Principles", "Production Debugging", "Enterprise Systems"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+    {
+      id: "virdhi-cert",
+      title: "AI Prompt Engineering & Relational DB Certificate",
+      org: "Virdhi Tech Lab Pvt Ltd",
+      date: "Jun 2026 – Jul 2026",
+      category: "Industry Certificate",
+      badge: "AI & DB Certified",
+      icon: Brain,
+      accent: "#8b5cf6",
+      desc: "Official certification recognizing completion of prompt engineering workflows, model accuracy tuning, and normalized MySQL relational schema architecture for production applications.",
+      skills: ["Prompt Engineering", "MySQL", "Relational Schemas", "UI/UX Integration"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+    {
+      id: "tnjug-award-cert",
+      title: "Best Contributor Award & Certificate — Open Source Lab",
+      org: "Tamil Nadu Java User Group (TNJUG) & KEC",
+      date: "2025",
+      category: "Honors Certificate",
+      badge: "Honors & Award",
+      icon: Award,
+      accent: "#f59e0b",
+      desc: "Certificate of honor awarded by Tamil Nadu Java User Group (TNJUG) in collaboration with Kongu Engineering College for outstanding code contributions and active student mentoring.",
+      skills: ["Java", "TNJUG Community", "Peer Mentoring", "Open Source Tooling"],
+      link: "https://github.com/keerthana2k7",
+    },
+  ],
+  internships: [
+    {
+      id: "hcl-aiml-training",
+      title: "HCL AI/ML Certification & Applied Training",
+      org: "HCLTech",
+      date: "2026",
+      category: "Certification & Training",
+      badge: "AI/ML Certification",
+      icon: Cpu,
+      accent: "#6366f1",
+      desc: "Certified in Artificial Intelligence and Machine Learning by HCL. Developed supervised learning algorithms, predictive modeling pipelines, and deployed real-time inference APIs with FastAPI.",
+      skills: ["Artificial Intelligence", "Machine Learning", "Python", "FastAPI", "Data Analytics"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+    {
+      id: "zoho-intern",
+      title: "Software Development Intern",
+      org: "Zoho Corporation Private Limited",
+      date: "Dec 2025 – May 2026",
+      category: "Industry Experience",
+      badge: "6-Month Internship",
+      icon: Briefcase,
+      accent: "#0ea5e9",
+      desc: "Engineered Java backend modules within the Technical Staff team. Refactored object-oriented systems, resolved production bugs, and earned a 'Good' performance rating on the official internship evaluation.",
+      skills: ["Java Backend", "OOP Principles", "Production Debugging", "Enterprise Systems"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+    {
+      id: "virdhi-intern",
+      title: "AI Prompt Engineer Intern",
+      org: "Virdhi Tech Lab Pvt Ltd",
+      date: "Jun 2026 – Jul 2026",
+      category: "Industry Experience",
+      badge: "AI & DB Internship",
+      icon: Brain,
+      accent: "#8b5cf6",
+      desc: "Designed and tested prompts for AI-driven applications, refined model query accuracy, and developed normalized MySQL relational schemas supporting core backend functionalities.",
+      skills: ["Prompt Engineering", "MySQL", "Relational Schemas", "UI/UX Integration"],
+      link: "https://www.linkedin.com/in/keerthana-rajendran357",
+    },
+  ],
   community: [
     {
       id: "os-tnebooks",
@@ -98,43 +193,16 @@ const ACHIEVEMENTS = {
       link: "https://github.com/keerthana2k7/mini-hackathon",
     },
   ],
-  internships: [
-    {
-      id: "zoho-intern",
-      title: "Software Development Intern",
-      org: "Zoho Corporation Private Limited",
-      date: "Dec 2025 – May 2026",
-      category: "Industry Experience",
-      badge: "6-Month Internship",
-      icon: Briefcase,
-      accent: "#0ea5e9",
-      desc: "Engineered Java backend modules within the Technical Staff team. Refactored object-oriented systems, resolved production bugs, and earned a 'Good' performance rating on the official internship evaluation.",
-      skills: ["Java Backend", "OOP Principles", "Production Debugging", "Enterprise Systems"],
-      link: "https://www.linkedin.com/in/keerthana-rajendran357",
-    },
-    {
-      id: "virdhi-intern",
-      title: "AI Prompt Engineer Intern",
-      org: "Virdhi Tech Lab Pvt Ltd",
-      date: "Jun 2026 – Jul 2026",
-      category: "Industry Experience",
-      badge: "AI & DB Internship",
-      icon: Briefcase,
-      accent: "#8b5cf6",
-      desc: "Designed and tested prompts for AI-driven applications, refined model query accuracy, and developed normalized MySQL relational schemas supporting core backend functionalities.",
-      skills: ["Prompt Engineering", "MySQL", "Relational Schemas", "UI/UX Integration"],
-      link: "https://www.linkedin.com/in/keerthana-rajendran357",
-    },
-  ],
 };
 
 export default function Certificates() {
-  const [tab, setTab] = useState("community");
+  const [tab, setTab] = useState("certifications");
 
   const tabLabels = [
-    { key: "community", label: "Open Source & Community" },
-    { key: "hackathons", label: "Hackathons & Competitions" },
+    { key: "certifications", label: "Certifications" },
     { key: "internships", label: "Internships & Industry" },
+    { key: "hackathons", label: "Hackathons & Competitions" },
+    { key: "community", label: "Open Source & Community" },
   ];
 
   return (

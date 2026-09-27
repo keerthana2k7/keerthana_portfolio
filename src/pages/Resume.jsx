@@ -234,6 +234,7 @@ export default function Resume() {
             <Award size={20} /> Honors & Achievements
           </h4>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, lineHeight: 1.8, fontSize: 14, color: "#cbd5e1" }}>
+            <li>🤖 <strong>HCL AI/ML Professional Certification (2026):</strong> Certified in Artificial Intelligence & Machine Learning by HCL; trained predictive ML models and deployed REST APIs with FastAPI.</li>
             <li>🏆 <strong>Best Contributor Award – Open Source Lab:</strong> Awarded by Tamil Nadu Java User Group (TNJUG) in collaboration with Kongu Engineering College.</li>
             <li>🇮🇳 <strong>Pre-Finalist, Smart India Hackathon (SIH 2025):</strong> National-level hackathon, shortlisted among top teams from 1,000+ national entries.</li>
             <li>⚡ <strong>Finalist, Internal College Hackathon 2025:</strong> Shortlisted among top teams from senior and first-year cohorts at Kongu Engineering College.</li>
@@ -252,9 +253,12 @@ export default function Resume() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {[
               "Java (Core & Advanced)",
+              "Python",
+              "AI & Machine Learning (AIML)",
+              "FastAPI",
+              "Scikit-Learn",
               "C++",
               "C",
-              "Python",
               "JavaScript",
               "SQL",
               "MySQL",
